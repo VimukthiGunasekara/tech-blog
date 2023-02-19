@@ -1,19 +1,20 @@
-<div class="container card mb-4 post postcard" style="margin-bottom: 15px;">
+<div class="container">
     <div class="row">
-        <div class="col-4">
-            <img class="card-img rounded" src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" alt="Card image"
-                style="width: 100%; height:auto;">
-        </div>
-        <div class="col-8">
-            <h3 class="card-title">{{title}}</h3>
+        <div class="alert alert-success" role="alert">
+            <h3 class="card-title alert-heading">{{title}}</h3>
             <p class="card-text">{{post_text}}</p>
-            <p class="card-text">By: {{user.username}}</p>
-            <p>{{format_date created_at}}</p>
-            <a class="btn btn-primary" href="/post/{{id}}">Read more →</a>
-            <div class="meta">
+            <hr>
 
+            <ul class="nav list-unstyled d-flex ">
+                <li><p class="card-text">By: {{user.username}}</p></li>
+                <li class="ms-5"><p>{{format_date created_at}}</p></li>
+                <div class="meta ms-5">
                 <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
             </div>
+            </ul>
+
+            <a class="btn btn-primary" href="/post/{{id}}">Read more →</a>
+            
         </div>
     </div>
 </div>
